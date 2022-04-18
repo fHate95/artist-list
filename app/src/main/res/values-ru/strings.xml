@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="top_artists">Топ исполнителей</string>
+    <string name="retry">Повторить</string>
+
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="text" format="string" />
+    <attr name="blockedClick" format="boolean" />
+
+    <declare-styleable name="ErrorView">
+        <attr name="text" />
+        <attr name="blockedClick" />
+        <attr name="buttonText" format="string"/>
+        <attr name="errorType">
+            <enum name="internal" value="-1"/>
+            <enum name="connection" value="0"/>
+            <enum name="not_found" value="1"/>
+        </attr>
+    </declare-styleable>
+
+</resources>

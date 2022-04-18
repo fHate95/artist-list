@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name" translatable="false">artist-list</string>
+
+    <string name="top_artists">Top artists</string>
+    <string name="retry">Retry</string>
+
+</resources>

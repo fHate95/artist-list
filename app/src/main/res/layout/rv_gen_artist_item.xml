@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:detail="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="io.fhate.artist_list.data.artist.ArtistModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:clipToPadding="false">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/small_padding"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="@{(v)-> item.clickListener.onClick(v, item.adapterPosition)}">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/small_padding"
+                android:clipToPadding="false">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivPhoto"
+                    android:layout_width="0dp"
+                    android:layout_height="96dp"
+                    android:scaleType="fitCenter"
+                    android:elevation="@dimen/small_padding"
+                    tools:ignore="ContentDescription"
+                    app:artistImage="@{item}"
+                    tools:srcCompat="@drawable/undraw_not_found"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_padding"
+                    android:gravity="center_horizontal"
+                    android:paddingStart="@dimen/small_padding"
+                    android:paddingEnd="@dimen/small_padding"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivPhoto"
+                    android:text="@{item.name}"
+                    android:textSize="16sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:autoSizeTextType="uniform"
+                    tools:text="Artist name"/>
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="@dimen/small_padding"
+                    android:layout_marginEnd="@dimen/small_padding"
+                    android:layout_marginTop="@dimen/tiny_padding"
+                    android:background="@color/black"
+                    app:layout_constraintTop_toBottomOf="@id/tvName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvListeners"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/tiny_padding"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider"
+                    formattedListeners="@{item.listeners}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:maxLines="1"
+                    app:autoSizeTextType="uniform"
+                    tools:text="2.5M"/>
+
+                <TextView
+                    android:id="@+id/tvListenersLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvListeners"
+                    android:text="listeners"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </FrameLayout>
+
+</layout>

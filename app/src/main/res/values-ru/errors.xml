@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="error_no_connection">Похоже, у вас проблемы с соединением. Проверьте настройки сети и повторите попытку.</string>
+    <string name="error_not_found">Ничего не найдено :(</string>
+    <string name="error_internal">Произошла внутренняя ошибка. Мы уже работаем над этим.</string>
+
+</resources>

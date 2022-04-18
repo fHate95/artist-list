@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+
+    <item android:gravity="fill">
+        <color android:color="@color/colorBackground" />
+    </item>
+
+    <item android:drawable="@drawable/ic_logo"
+        android:gravity="center"/>
+
+    <!--    <item android:drawable="@drawable/ic_logo_countdown"-->
+    <!--        android:gravity="center"/>-->
+
+</layer-list>
